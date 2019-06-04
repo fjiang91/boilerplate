@@ -1,6 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
 const app = express();
 
 //Body Parsing Middleware
@@ -9,6 +11,17 @@ app.use(express.urlencoded({ extended: true }));
 
 //Logging Middleware
 app.use(morgan('dev'));
+
+//Session Middleware
+app.use(session({
+  secret: 'process.env.SESSION_SECRET' || 'Secret Password',
+  resave: false,
+  saveUninitialized: false
+}));
+
+//Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Static Middleware
 app.use(express.static(path.join(__dirname, '../public')));

@@ -1,5 +1,5 @@
 const app = require('./server/server');
-const { db } = require('./server/db/mainDB');
+const { db } = require('./server/models/db');
 const PORT = process.env.PORT || 1337;
 
 db.sync()
