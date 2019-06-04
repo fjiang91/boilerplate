@@ -1,5 +1,5 @@
 import dummyReducer from './dummyReducer';
-import { combineReducers } from 'react-redux';
+import { combineReducers } from 'redux';
 
 //Root Reducer - Combine Reducers
 const rootReducer = combineReducers({
