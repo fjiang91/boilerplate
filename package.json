@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main",
-    "start-dev": "webpack -w & nodemon main.js"
+    "start-dev": "export NODE_ENV=development & webpack -w & nodemon main.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
     "pg": "^7.11.0",
     "pg-hstore": "^2.3.2",
     "react": "^16.8.6",

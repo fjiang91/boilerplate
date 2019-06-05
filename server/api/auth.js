@@ -2,6 +2,8 @@ const router = require('express').Router();
 const passport = require('passport');
 const { User } = require('../models/db');
 
+router.use('/google', require('./oauth/googleOAuth'));
+
 router.get('/me', async (req, res, next) => {
   res.json(req.user);
 });

@@ -7,17 +7,23 @@ const User = db.define(
   'user',
   {
     email: {
+    type: Sequelize.STRING,
+    unique: true,
+    allowNull: false,
+    },
+    name: {
       type: Sequelize.STRING,
-      unique: true,
-      allowNull: false,
     },
     password: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
     salt: {
       type: Sequelize.STRING
-    }
+    },
+    googleId: {
+      type: Sequelize.STRING,
+      unique: true,
+    },
   },
   {
     hooks: {

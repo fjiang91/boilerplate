@@ -4,6 +4,7 @@ const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
 const app = express();
+require('dotenv').config();
 
 //Body Parsing Middleware
 app.use(express.json());
